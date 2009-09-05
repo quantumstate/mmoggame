@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Komodo Project File - DO NOT EDIT -->
+<project id="62e42076-f5a6-47fb-b22f-e84b7e83fb21" kpf_version="4" name="game.kpf">
+<preference-set idref="62e42076-f5a6-47fb-b22f-e84b7e83fb21">
+  <boolean id="import_live">1</boolean>
+</preference-set>
+</project>

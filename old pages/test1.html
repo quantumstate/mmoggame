@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>testing css</title>
+<style>
+div.main a:active,div.main a:focus{
+color:#0000FF;
+text-decoration:underline;
+font-weight:bold;
+}
+
+div.cover{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:5000px;
+background-image:url("images/overlay.png");
+display:none;
+cursor:default;
+}
+
+div.middle{
+margin-left:auto;
+margin-right:auto;
+position:relative;
+top:130px;
+width:400px;
+background-color:#FFFFFF;
+opacity:1;
+}
+
+body{
+background-color:#00FF00;
+}
+
+div.main a:focus div.cover{
+display:block;
+}
+</style>
+</head>
+<body>
+<div class="main">
+the 
+
+<a href="#">hi<div class="cover"><div class="middle">Here is where the content goes</div></div></a>
+</div>
+div 
+
+
+</body>
+</html>

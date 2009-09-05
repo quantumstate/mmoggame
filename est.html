@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head><title>Pseudo element: before demonstration</title>
+
+<style type="text/css">
+
+p.quotation:after
+
+{
+
+    content: close-quote;
+
+}
+
+p.quotation:hover font:before
+
+{
+
+    content: open-quote;
+
+}
+
+</style>
+
+<script type="text/javascript">
+function writeText(txt)
+{
+document.getElementById("desc").innerHTML=txt
+}
+</script>
+
+</head>
+
+<body>
+
+<h1>Pseudo element: before demonstration</h1>
+
+Sonu Kapoor said:
+
+<p class="quotation">
+
+  <font size="20">
+
+    <a href="http://www.topxml.com">TopXML</a> is a great place!
+
+  </font>
+
+</p>
+
+<p id="desc"></p>
+
+<FONT NAME="herew">Microsoft</FONT>
+
+<FONT onMouseOver="writeText('The planet Mercury is very difficult to study from the Earth because it is always so close to the Sun.')"
+      onMouseOut="document.all['herew'].innerHTML = 'Microsoft'">Microsoft</FONT>
+
+<FONT onMouseOver="this.innerHTML = 'The Software Tycoon'"
+      onMouseOut="this.innerHTML = 'Microsoft'">Microsoft</FONT>
+
+</body>
+
+</html>

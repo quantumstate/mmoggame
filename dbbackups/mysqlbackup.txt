@@ -1,0 +1,832 @@
+-- phpMyAdmin SQL Dump
+-- version 2.7.0-pl1
+-- http://www.phpmyadmin.net
+-- 
+-- Host: localhost
+-- Generation Time: May 18, 2006 at 08:35 PM
+-- Server version: 5.0.18
+-- PHP Version: 5.1.1
+-- 
+-- Database: `mmog`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `buildings`
+-- 
+
+CREATE TABLE `buildings` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` text NOT NULL,
+  `abbr` text NOT NULL,
+  `resources` text NOT NULL,
+  `time` text NOT NULL,
+  `dependancy` text NOT NULL,
+  `picture` text NOT NULL,
+  `description` text NOT NULL,
+  `link` text NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+-- 
+-- Dumping data for table `buildings`
+-- 
+
+INSERT INTO `buildings` VALUES (1, 'Town Centre', 'tc', '60|60|20|5|30|2', '600', '', 'tc.gif', 'This is the main meeting place in your town.  You need a high level for many upgrades.', '');
+INSERT INTO `buildings` VALUES (2, 'Barracks', 'ba', '500|350|100|10|200|2', '1200', 'tc|4', 'ba.gif', 'Infantry are trained here.  With higher levels more advanced infantry can be trained.', 'ba.php');
+INSERT INTO `buildings` VALUES (3, 'Stable', 'st', '850|570|200|10|300|3', '2400', 'ba|5', 'st.gif', 'This is where cavalry are trained.  With higher levels more advanced cavalry can be trained.', '');
+INSERT INTO `buildings` VALUES (4, 'Merchants Guild', 'mg', '650|460|125|10|200|2', '1800', 'tc|4', 'mg.gif', 'The merchants guild provides you with merchants who can trade with other players.  You can also exchange resources here.', 'mg.php');
+INSERT INTO `buildings` VALUES (5, 'Siege Works', 'sw', '1250|3200|400|0|650|3', '4200', '', 'sw.gif', 'At the siege works your engineers can produce seige weapons which can destroy buildings in other peoples towns.', '');
+INSERT INTO `buildings` VALUES (6, 'Warehouse', 'wa', '100|100|20|20|50|1', '840', '', 'wa.gif', 'The warehouse is where your resources are stored.  Higher levels store more resources.', '');
+INSERT INTO `buildings` VALUES (7, 'Bank', 'bk', '50|100|20|20|100|1', '840', '', 'bk.gif', 'The bank is where your coin is stored.  Higher levels store more coins.', '');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `igm`
+-- 
+
+CREATE TABLE `igm` (
+  `id` int(11) NOT NULL auto_increment,
+  `to` text NOT NULL,
+  `from` text NOT NULL,
+  `subject` text NOT NULL,
+  `content` text NOT NULL,
+  `read` text NOT NULL,
+  `time` text NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=99 ;
+
+-- 
+-- Dumping data for table `igm`
+-- 
+
+INSERT INTO `igm` VALUES (13, 'xyzgames', 'quantumstate', 'Thanks', 'I will be making attack sometime in the future.', 'yes', '1146935147');
+INSERT INTO `igm` VALUES (11, '', 'xyzgames', '', 'hi\r\n', 'yes', '1146935009');
+INSERT INTO `igm` VALUES (12, 'quantumstate', 'xyzgames', 'hi', 'nice ingame messaging\r\n', 'yes', '1146935074');
+INSERT INTO `igm` VALUES (6, 'quantumstate', 'Oakley', 'hi', 'hi!!!!!!', 'yes', '1146854422');
+INSERT INTO `igm` VALUES (10, 'quantumstate', 'quantumstate', 'hi', 'shaof', 'yes', '1146934992');
+INSERT INTO `igm` VALUES (7, 'Oakley', 'quantumstate', 'Hi', 'Hello oakley.  I notice that you have found the igm.  Have you noticed how it is greyed out when there are no new messages?  You can read and reply and do most message stuff now.  Future updates will be being able to message after finding the player on the map.', 'yes', '1146856011');
+INSERT INTO `igm` VALUES (9, 'xyzgames', 'quantumstate', 'Hi', 'Hi jamie.  How r u getting on?', 'yes', '1146934974');
+INSERT INTO `igm` VALUES (14, 'St.Death', 'Jane', 'Greetings', 'You will lose!', '', '1147006009');
+INSERT INTO `igm` VALUES (15, 'whoever is online now', 'xyzgames', 'who is it', 'Who is online now?\r\n', 'yes', '1147014136');
+INSERT INTO `igm` VALUES (16, 'snowy', 'xyzgames', 'hi', 'i am going to beat you when i get an army\r\n', 'yes', '1147078858');
+INSERT INTO `igm` VALUES (17, 'xyzgames', 'snowy', 'hi ', 'hi 2 u 2', 'yes', '1147078889');
+INSERT INTO `igm` VALUES (18, 'olabajing', 'quantumstate', 'Hi', 'hi david', 'yes', '1147089669');
+INSERT INTO `igm` VALUES (19, 'quantumstate', 'olabajing', 'Re: Hi', '2 add 4 is ...', 'yes', '1147089728');
+INSERT INTO `igm` VALUES (20, 'xyzgames', 'olabajing', 'hi', 'hihihihihi\r\n', 'yes', '1147089781');
+INSERT INTO `igm` VALUES (21, 'david', 'olabajing', 'please...', 'can i be a god?\r\n', 'yes', '1147089820');
+INSERT INTO `igm` VALUES (22, 'olabajing', 'xyzgames', 'hi', 'ru on now', 'yes', '1147106971');
+INSERT INTO `igm` VALUES (23, 'Oakley', 'Oakley', 'hi', 'hi', 'yes', '1147113902');
+INSERT INTO `igm` VALUES (24, 'olabajing', 'david', '', 'no\r\n', '', '1147116934');
+INSERT INTO `igm` VALUES (25, 'quantumstate', 'Oakley', '', 'can i hav some resources??????\r\nplzplzplzplz\r\n', 'yes', '1147193672');
+INSERT INTO `igm` VALUES (26, 'quantum state ', 'snowy', 'gods', 'please let me b 1', 'yes', '1147260959');
+INSERT INTO `igm` VALUES (27, '...', 'death by chocolate', 'phonecians', 'Gd choice', 'yes', '1147278538');
+INSERT INTO `igm` VALUES (28, 'jim', 'Oakley', 'game', 'did you know, this game really sucks. I think that you should make david a god, then it would be much better.', 'yes', '1147349840');
+INSERT INTO `igm` VALUES (29, 'purplelovemachine', 'Lord Apricot', '', 'hi tilly', 'yes', '1147353720');
+INSERT INTO `igm` VALUES (30, 'purplelovemachine', 'death by chocolate', 'evil death', 'GWAHAHAHAHA!!! Y?', 'yes', '1147353720');
+INSERT INTO `igm` VALUES (31, 'death by chocolate', 'purplelovemachine', '', 'grrr ure goin down', 'yes', '1147353775');
+INSERT INTO `igm` VALUES (32, 'purplelovemachine', 'death by chocolate', 'chocolate', 'Chocolate Rules yeah!!!', 'yes', '1147353995');
+INSERT INTO `igm` VALUES (33, 'krusher', 'purplelovemachine', '', 'haha ure ginger', 'yes', '1147356331');
+INSERT INTO `igm` VALUES (34, 'krusher', 'purplelovemachine', 'urrrrm', 'hahaha ure ginger', 'yes', '1147356409');
+INSERT INTO `igm` VALUES (35, 'purplelovemachine', 'krusher', 'anything', 'youre gay', 'yes', '1147357447');
+INSERT INTO `igm` VALUES (36, 'krusher', 'purplelovemachine', 'biatch', 'ure gayer\r\nerererererererereere', 'yes', '1147357458');
+INSERT INTO `igm` VALUES (37, 'Lord Apricot', 'krusher', 'edd', 'i hate you', 'yes', '1147357569');
+INSERT INTO `igm` VALUES (38, 'quantumstate', 'purplelovemachine', 'hi', 'hello can i ask you which is better on the resorces 1 lvl 3 or 2 lvl 2''s\r\ncheers \r\nrob', 'yes', '1147361301');
+INSERT INTO `igm` VALUES (39, 'Lord Apricot', 'Oakley', 'hi', 'hu da hell r u cause im gonna crush ya', 'yes', '1147367668');
+INSERT INTO `igm` VALUES (40, 'krusher', 'Oakley', 'hi', 'hu da hell r u cause im gonna crush ya', 'yes', '1147367688');
+INSERT INTO `igm` VALUES (41, 'Bartoneagle', 'Chav Man', 'Random message', 'yo', 'yes', '1147379552');
+INSERT INTO `igm` VALUES (42, 'xyzgames', 'snowy', 'rt', 'this lesson is sos boring\r\n', 'yes', '1147422773');
+INSERT INTO `igm` VALUES (43, 'Oakley', 'Lord Apricot', '', 'Oakley im ed dammit and ill crush you asshole\r\n', 'yes', '1147424385');
+INSERT INTO `igm` VALUES (44, 'xyzgames', 'Oakley', 'hi', 'die die die die die\r\ni am better dan u!!\r\n', 'yes', '1147429588');
+INSERT INTO `igm` VALUES (45, 'purplelovemachine', 'death by chocolate', '', 'u goin down', '', '1147430411');
+INSERT INTO `igm` VALUES (46, 'tim', 'Oakley', 'hi', 'your rubbish!!!!!!!', 'yes', '1147430810');
+INSERT INTO `igm` VALUES (47, 'Oakley', 'tim', 'dick head', 'fucking wanker', 'yes', '1147430834');
+INSERT INTO `igm` VALUES (48, 'quantumstate', 'kidnapped_by_david_alexander', 'jimjiimijm', '', 'yes', '1147431228');
+INSERT INTO `igm` VALUES (49, 'quantumstate', 'kidnapped_by_david_alexander', '', 'i need help, my town isnt in tne map jimbo', 'yes', '1147431253');
+INSERT INTO `igm` VALUES (50, 'St.Death', 'tim', 'who are you', 'from jim and Tim', 'yes', '1147432216');
+INSERT INTO `igm` VALUES (51, 'purplelovemachine', 'krusher', 'anything', 'your gona die', 'yes', '1147436513');
+INSERT INTO `igm` VALUES (52, 'death by chocolate', 'purplelovemachine', 'muhaha', 'hehe im beating u!!', 'yes', '1147539182');
+INSERT INTO `igm` VALUES (53, 'Lord Apricot', 'purplelovemachine', 'muhahaha', 'ure gay im beating u!!!!! hahahaha\r\nhehehehehehehehehe\r\nP.s fable 2 rules!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!', 'yes', '1147539263');
+INSERT INTO `igm` VALUES (54, 'krusher', 'god of evil tedz', 'pig', 'when we get army we kill all non egyptians and eygiptians we hate well infact lets kill every thing', 'yes', '1147692776');
+INSERT INTO `igm` VALUES (55, 'purplelovemachine', 'krusher', 'town', 'ive got barraks', 'yes', '1147692783');
+INSERT INTO `igm` VALUES (56, 'purplelovemachine', 'god of evil tedz', 'pig', 'banny is gay', 'yes', '1147692886');
+INSERT INTO `igm` VALUES (57, 'god of evil tedz', 'krusher', 'other towns', 'well take out banny and then rob', 'yes', '1147693023');
+INSERT INTO `igm` VALUES (58, 'krusher', 'god of evil tedz', 'pig', 'roger roger piggyo', '', '1147693086');
+INSERT INTO `igm` VALUES (59, 'purplelovemachine', 'krusher', 'you', 'weregonna get you', 'yes', '1147693097');
+INSERT INTO `igm` VALUES (60, 'god of evil tedz', 'purplelovemachine', '', 'ure gay', 'yes', '1147694752');
+INSERT INTO `igm` VALUES (61, 'death by chocolate', 'god of evil tedz', 'pi', '', 'yes', '1147695069');
+INSERT INTO `igm` VALUES (62, 'death by chocolate', 'god of evil tedz', '', 'when i get military your dead p.s i did not send this to you nigil it was urrrrr.......urm...my evil twin yes my evil twin', 'yes', '1147695169');
+INSERT INTO `igm` VALUES (63, 'death by chocolate', 'god of evil tedz', 'uydf, ', 'when i get a militery your so dead i did not send this too u nigil it was ur.....urm....urr...my...no your evil twin yes evil twin ha ha ha ha ha ha ha ha ha ha ha ha haha ha ha ha ha ha ha haha ha ha haha and was not me', 'yes', '1147695290');
+INSERT INTO `igm` VALUES (64, 'god of evil tedz', 'death by chocolate', 'yeah right', 'lrn 2 spel my nam b4 u snd abuse 2 me', 'yes', '1147707066');
+INSERT INTO `igm` VALUES (65, 'purplelovemachine', 'death by chocolate', 'am i bovvered', 'well, am i?\r\nDo i look as if u care?', 'yes', '1147707126');
+INSERT INTO `igm` VALUES (66, 'boffdude', 'Chav Man', 'random', 'yo', 'yes', '1147712280');
+INSERT INTO `igm` VALUES (67, 'boffdude', 'Oakley', 'ha', 'hahahahahahahahahaha\r\nur crap!', 'yes', '1147713421');
+INSERT INTO `igm` VALUES (68, 'death by chocolate', 'god of evil tedz', 'k', 'point well made but i dont care how u spell ur name. and i have to iritate you cus you aint eygptian', 'yes', '1147718497');
+INSERT INTO `igm` VALUES (69, 'krusher', 'god of evil tedz', 'trade', 'if i give you 100 wheat and 50 coins could you give me 100wood', 'yes', '1147718614');
+INSERT INTO `igm` VALUES (70, 'purplelovemachine', 'god of evil tedz', 'help', 'ima outa ofa wooda helpa mea pleasa (in an italian pizza makers accent) p.s moo', 'yes', '1147718908');
+INSERT INTO `igm` VALUES (71, 'Lord Apricot', 'god of evil tedz', 'waco', 'when aliances come out i acsbect you to be on mine yes eddy you know who this is the god of evil tedz also the god of the big evil and the god of moo cows in other words your worst nightmare', 'yes', '1147719241');
+INSERT INTO `igm` VALUES (72, 'god of evil tedz', 'purplelovemachine', '!!', 'mee to mate soz\r\np.s moo in a high voice', 'yes', '1147726465');
+INSERT INTO `igm` VALUES (73, 'Snowy', 'Oakley', 'resources', 'dav told me to sendu these', '', '1147770528');
+INSERT INTO `igm` VALUES (74, 'Oakly''s town', 'SirAethelred', 'hi', 'hi', '', '1147770546');
+INSERT INTO `igm` VALUES (75, 'purplelovemachine', 'krusher', 'town', 'im going to march on you', 'yes', '1147780371');
+INSERT INTO `igm` VALUES (76, 'krusher', 'krusher', 'greg', 'i hate you 2 im going to march on you 2', '', '1147780424');
+INSERT INTO `igm` VALUES (77, 'god of evil tedz', 'krusher', 'army', 'get stabel so you can get calry', 'yes', '1147781098');
+INSERT INTO `igm` VALUES (78, 'god of evil tedz', 'krusher', 'army', 'shall we alley with edd', 'yes', '1147781253');
+INSERT INTO `igm` VALUES (79, 'krusher', 'god of evil tedz', 'pig', 'yeah ally with edd cus he ll do anything i tell him too', '', '1147797599');
+INSERT INTO `igm` VALUES (80, 'purplelovemachine', 'god of evil tedz', 'ranking', 'at this point in time if it hasnt changed im rank 6 and greg is 7 ive over taken him yay his ecoming a lyabilaty which may have to be delt wi.....ur for get that bit lol', 'yes', '1147797797');
+INSERT INTO `igm` VALUES (81, 'Chav Man', 'boffdude', '', 'heya\r\n', '', '1147856934');
+INSERT INTO `igm` VALUES (82, 'Oakley', 'boffdude', '', 'go 2 hell', 'yes', '1147856949');
+INSERT INTO `igm` VALUES (83, 'god of evil tedz', 'death by chocolate', 'get a life', ' y don u jus get a life an go away u gypsy', 'yes', '1147859242');
+INSERT INTO `igm` VALUES (84, 'death by chocolate', 'god of evil tedz', '>=(', 'me a gypsy ur the gypsy mate not me ha ha ha ha ha ha ha ha your such a losser mate and dont ya just know it', '', '1147882834');
+INSERT INTO `igm` VALUES (85, 'purplelovemachine', 'quantumstate', 'I can''t tell you that I''m afraid', '', 'yes', '1147888824');
+INSERT INTO `igm` VALUES (86, 'god of evil tedz', 'Oakley', 'hi', 'ur crap and hu da hell r u!!!\r\n', 'yes', '1147894920');
+INSERT INTO `igm` VALUES (87, 'quantumstate', 'purplelovemachine', '?', 'urr i got a problem i have minus 7093 gold and my production is -43 per hour???\r\ni have more gold farms than enything else!\r\n', 'yes', '1147895991');
+INSERT INTO `igm` VALUES (88, 'xyzgames', 'oakley', 'me', 'i wank you in bed, you make me horny, i want to bum u', 'yes', '1147961021');
+INSERT INTO `igm` VALUES (89, 'purplelovemachine', 'oakley', 'you are hot', 'i love you and want your babies', '', '1147961086');
+INSERT INTO `igm` VALUES (90, '', 'it01y2', '', '', '', '1147964029');
+INSERT INTO `igm` VALUES (91, 'tim', 'Oakley', 'coin', 'i wnat all of my coin bac ase hole!!!!!!', '', '1147964438');
+INSERT INTO `igm` VALUES (92, 'purplelovemachine', 'quantumstate', 'I know you have a problem', 'Go to specsavers and get an eye test.', '', '1147968627');
+INSERT INTO `igm` VALUES (93, 'Oakley', 'god of evil tedz', '.....', 'ha ha ha ha', 'yes', '1147971098');
+INSERT INTO `igm` VALUES (94, 'Oakley', 'god of evil tedz', 'clue to who i am', 'ill give ya a clue i hate banny aswell probably more than you', 'yes', '1147971254');
+INSERT INTO `igm` VALUES (95, 'god of evil tedz', 'Oakley', 'hu da hell r u', 'tilly? eaton? greg?', '', '1147971407');
+INSERT INTO `igm` VALUES (96, 'Oakers', 'Chav Man', 'l', 'l', '', '1147979869');
+INSERT INTO `igm` VALUES (97, 'oakley', 'xyzgames', '', 'what the hell r u on about????\r\n', '', '1147980311');
+INSERT INTO `igm` VALUES (98, 'xyzgames', 'xyzgames', '', 'yes', 'yes', '1147980328');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `map`
+-- 
+
+CREATE TABLE `map` (
+  `terrain` text NOT NULL,
+  `player` text NOT NULL,
+  `x` text NOT NULL,
+  `y` text NOT NULL,
+  `id` int(11) NOT NULL auto_increment,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=442 ;
+
+-- 
+-- Dumping data for table `map`
+-- 
+
+INSERT INTO `map` VALUES ('g', '', '-10', '-10', 1);
+INSERT INTO `map` VALUES ('g', '', '-10', '-9', 2);
+INSERT INTO `map` VALUES ('g', '', '-10', '-8', 3);
+INSERT INTO `map` VALUES ('g', '', '-10', '-7', 4);
+INSERT INTO `map` VALUES ('g', '', '-10', '-6', 5);
+INSERT INTO `map` VALUES ('g', '', '-10', '-5', 6);
+INSERT INTO `map` VALUES ('g', '', '-10', '-4', 7);
+INSERT INTO `map` VALUES ('g', '', '-10', '-3', 8);
+INSERT INTO `map` VALUES ('g', '', '-10', '-2', 9);
+INSERT INTO `map` VALUES ('v', 'black star', '-10', '-1', 10);
+INSERT INTO `map` VALUES ('g', '', '-10', '0', 11);
+INSERT INTO `map` VALUES ('g', '', '-10', '1', 12);
+INSERT INTO `map` VALUES ('g', '', '-10', '2', 13);
+INSERT INTO `map` VALUES ('g', '', '-10', '3', 14);
+INSERT INTO `map` VALUES ('v', 'bing', '-10', '4', 15);
+INSERT INTO `map` VALUES ('g', '', '-10', '5', 16);
+INSERT INTO `map` VALUES ('g', '', '-10', '6', 17);
+INSERT INTO `map` VALUES ('g', '', '-10', '7', 18);
+INSERT INTO `map` VALUES ('g', '', '-10', '8', 19);
+INSERT INTO `map` VALUES ('g', '', '-10', '9', 20);
+INSERT INTO `map` VALUES ('g', '', '-10', '10', 21);
+INSERT INTO `map` VALUES ('g', '', '-9', '-10', 22);
+INSERT INTO `map` VALUES ('g', '', '-9', '-9', 23);
+INSERT INTO `map` VALUES ('g', '', '-9', '-8', 24);
+INSERT INTO `map` VALUES ('g', '', '-9', '-7', 25);
+INSERT INTO `map` VALUES ('g', '', '-9', '-6', 26);
+INSERT INTO `map` VALUES ('g', '', '-9', '-5', 27);
+INSERT INTO `map` VALUES ('g', '', '-9', '-4', 28);
+INSERT INTO `map` VALUES ('g', '', '-9', '-3', 29);
+INSERT INTO `map` VALUES ('g', '', '-9', '-2', 30);
+INSERT INTO `map` VALUES ('g', '', '-9', '-1', 31);
+INSERT INTO `map` VALUES ('g', '', '-9', '0', 32);
+INSERT INTO `map` VALUES ('v', 'kornboy', '-9', '1', 33);
+INSERT INTO `map` VALUES ('g', '', '-9', '2', 34);
+INSERT INTO `map` VALUES ('v', 'Forgotten_Hero', '-9', '3', 35);
+INSERT INTO `map` VALUES ('g', '', '-9', '4', 36);
+INSERT INTO `map` VALUES ('v', 'steve', '-9', '5', 37);
+INSERT INTO `map` VALUES ('g', '', '-9', '6', 38);
+INSERT INTO `map` VALUES ('g', '', '-9', '7', 39);
+INSERT INTO `map` VALUES ('g', '', '-9', '8', 40);
+INSERT INTO `map` VALUES ('g', '', '-9', '9', 41);
+INSERT INTO `map` VALUES ('g', '', '-9', '10', 42);
+INSERT INTO `map` VALUES ('g', '', '-8', '-10', 43);
+INSERT INTO `map` VALUES ('g', '', '-8', '-9', 44);
+INSERT INTO `map` VALUES ('g', '', '-8', '-8', 45);
+INSERT INTO `map` VALUES ('g', '', '-8', '-7', 46);
+INSERT INTO `map` VALUES ('g', '', '-8', '-6', 47);
+INSERT INTO `map` VALUES ('g', '', '-8', '-5', 48);
+INSERT INTO `map` VALUES ('g', '', '-8', '-4', 49);
+INSERT INTO `map` VALUES ('g', '', '-8', '-3', 50);
+INSERT INTO `map` VALUES ('g', '', '-8', '-2', 51);
+INSERT INTO `map` VALUES ('g', '', '-8', '-1', 52);
+INSERT INTO `map` VALUES ('g', '', '-8', '0', 53);
+INSERT INTO `map` VALUES ('g', '', '-8', '1', 54);
+INSERT INTO `map` VALUES ('g', '', '-8', '2', 55);
+INSERT INTO `map` VALUES ('g', '', '-8', '3', 56);
+INSERT INTO `map` VALUES ('g', '', '-8', '4', 57);
+INSERT INTO `map` VALUES ('g', '', '-8', '5', 58);
+INSERT INTO `map` VALUES ('g', '', '-8', '6', 59);
+INSERT INTO `map` VALUES ('g', '', '-8', '7', 60);
+INSERT INTO `map` VALUES ('g', '', '-8', '8', 61);
+INSERT INTO `map` VALUES ('g', '', '-8', '9', 62);
+INSERT INTO `map` VALUES ('v', '789', '-8', '10', 63);
+INSERT INTO `map` VALUES ('v', 'Mrs Moffat', '-7', '-10', 64);
+INSERT INTO `map` VALUES ('g', '', '-7', '-9', 65);
+INSERT INTO `map` VALUES ('g', '', '-7', '-8', 66);
+INSERT INTO `map` VALUES ('g', '', '-7', '-7', 67);
+INSERT INTO `map` VALUES ('v', 'Chav Man', '-7', '-6', 68);
+INSERT INTO `map` VALUES ('g', '', '-7', '-5', 69);
+INSERT INTO `map` VALUES ('g', '', '-7', '-4', 70);
+INSERT INTO `map` VALUES ('g', '', '-7', '-3', 71);
+INSERT INTO `map` VALUES ('g', '', '-7', '-2', 72);
+INSERT INTO `map` VALUES ('g', '', '-7', '-1', 73);
+INSERT INTO `map` VALUES ('g', '', '-7', '0', 74);
+INSERT INTO `map` VALUES ('g', '', '-7', '1', 75);
+INSERT INTO `map` VALUES ('g', '', '-7', '2', 76);
+INSERT INTO `map` VALUES ('g', '', '-7', '3', 77);
+INSERT INTO `map` VALUES ('g', '', '-7', '4', 78);
+INSERT INTO `map` VALUES ('g', '', '-7', '5', 79);
+INSERT INTO `map` VALUES ('g', '', '-7', '6', 80);
+INSERT INTO `map` VALUES ('g', '', '-7', '7', 81);
+INSERT INTO `map` VALUES ('g', '', '-7', '8', 82);
+INSERT INTO `map` VALUES ('g', '', '-7', '9', 83);
+INSERT INTO `map` VALUES ('g', '', '-7', '10', 84);
+INSERT INTO `map` VALUES ('g', '', '-6', '-10', 85);
+INSERT INTO `map` VALUES ('g', '', '-6', '-9', 86);
+INSERT INTO `map` VALUES ('g', '', '-6', '-8', 87);
+INSERT INTO `map` VALUES ('g', '', '-6', '-7', 88);
+INSERT INTO `map` VALUES ('g', '', '-6', '-6', 89);
+INSERT INTO `map` VALUES ('g', '', '-6', '-5', 90);
+INSERT INTO `map` VALUES ('g', '', '-6', '-4', 91);
+INSERT INTO `map` VALUES ('v', 'boffdude', '-6', '-3', 92);
+INSERT INTO `map` VALUES ('g', '', '-6', '-2', 93);
+INSERT INTO `map` VALUES ('g', '', '-6', '-1', 94);
+INSERT INTO `map` VALUES ('v', 'olabajing', '-6', '0', 95);
+INSERT INTO `map` VALUES ('g', '', '-6', '1', 96);
+INSERT INTO `map` VALUES ('g', '', '-6', '2', 97);
+INSERT INTO `map` VALUES ('g', '', '-6', '3', 98);
+INSERT INTO `map` VALUES ('g', '', '-6', '4', 99);
+INSERT INTO `map` VALUES ('g', '', '-6', '5', 100);
+INSERT INTO `map` VALUES ('g', '', '-6', '6', 101);
+INSERT INTO `map` VALUES ('g', '', '-6', '7', 102);
+INSERT INTO `map` VALUES ('g', '', '-6', '8', 103);
+INSERT INTO `map` VALUES ('g', '', '-6', '9', 104);
+INSERT INTO `map` VALUES ('g', '', '-6', '10', 105);
+INSERT INTO `map` VALUES ('g', '', '-5', '-10', 106);
+INSERT INTO `map` VALUES ('g', '', '-5', '-9', 107);
+INSERT INTO `map` VALUES ('g', '', '-5', '-8', 108);
+INSERT INTO `map` VALUES ('g', '', '-5', '-7', 109);
+INSERT INTO `map` VALUES ('g', '', '-5', '-6', 110);
+INSERT INTO `map` VALUES ('g', '', '-5', '-5', 111);
+INSERT INTO `map` VALUES ('g', '', '-5', '-4', 112);
+INSERT INTO `map` VALUES ('g', '', '-5', '-3', 113);
+INSERT INTO `map` VALUES ('g', '', '-5', '-2', 114);
+INSERT INTO `map` VALUES ('g', '', '-5', '-1', 115);
+INSERT INTO `map` VALUES ('g', '', '-5', '0', 116);
+INSERT INTO `map` VALUES ('g', '', '-5', '1', 117);
+INSERT INTO `map` VALUES ('g', '', '-5', '2', 118);
+INSERT INTO `map` VALUES ('g', '', '-5', '3', 119);
+INSERT INTO `map` VALUES ('g', '', '-5', '4', 120);
+INSERT INTO `map` VALUES ('g', '', '-5', '5', 121);
+INSERT INTO `map` VALUES ('g', '', '-5', '6', 122);
+INSERT INTO `map` VALUES ('g', '', '-5', '7', 123);
+INSERT INTO `map` VALUES ('g', '', '-5', '8', 124);
+INSERT INTO `map` VALUES ('g', '', '-5', '9', 125);
+INSERT INTO `map` VALUES ('g', '', '-5', '10', 126);
+INSERT INTO `map` VALUES ('g', '', '-4', '-10', 127);
+INSERT INTO `map` VALUES ('g', '', '-4', '-9', 128);
+INSERT INTO `map` VALUES ('g', '', '-4', '-8', 129);
+INSERT INTO `map` VALUES ('g', '', '-4', '-7', 130);
+INSERT INTO `map` VALUES ('v', 'teddy', '-4', '-6', 131);
+INSERT INTO `map` VALUES ('g', '', '-4', '-5', 132);
+INSERT INTO `map` VALUES ('g', '', '-4', '-4', 133);
+INSERT INTO `map` VALUES ('g', '', '-4', '-3', 134);
+INSERT INTO `map` VALUES ('g', '', '-4', '-2', 135);
+INSERT INTO `map` VALUES ('g', '', '-4', '-1', 136);
+INSERT INTO `map` VALUES ('g', '', '-4', '0', 137);
+INSERT INTO `map` VALUES ('g', '', '-4', '1', 138);
+INSERT INTO `map` VALUES ('g', '', '-4', '2', 139);
+INSERT INTO `map` VALUES ('g', '', '-4', '3', 140);
+INSERT INTO `map` VALUES ('g', '', '-4', '4', 141);
+INSERT INTO `map` VALUES ('g', '', '-4', '5', 142);
+INSERT INTO `map` VALUES ('g', '', '-4', '6', 143);
+INSERT INTO `map` VALUES ('g', '', '-4', '7', 144);
+INSERT INTO `map` VALUES ('g', '', '-4', '8', 145);
+INSERT INTO `map` VALUES ('g', '', '-4', '9', 146);
+INSERT INTO `map` VALUES ('g', '', '-4', '10', 147);
+INSERT INTO `map` VALUES ('g', '', '-3', '-10', 148);
+INSERT INTO `map` VALUES ('g', '', '-3', '-9', 149);
+INSERT INTO `map` VALUES ('g', '', '-3', '-8', 150);
+INSERT INTO `map` VALUES ('v', 'Fish4ever', '-3', '-7', 151);
+INSERT INTO `map` VALUES ('g', '', '-3', '-6', 152);
+INSERT INTO `map` VALUES ('v', 'saber', '-3', '-5', 153);
+INSERT INTO `map` VALUES ('g', '', '-3', '-4', 154);
+INSERT INTO `map` VALUES ('v', 'xyzgames', '-3', '-3', 155);
+INSERT INTO `map` VALUES ('g', '', '-3', '-2', 156);
+INSERT INTO `map` VALUES ('g', '', '-3', '-1', 157);
+INSERT INTO `map` VALUES ('g', '', '-3', '0', 158);
+INSERT INTO `map` VALUES ('g', '', '-3', '1', 159);
+INSERT INTO `map` VALUES ('g', '', '-3', '2', 160);
+INSERT INTO `map` VALUES ('g', '', '-3', '3', 161);
+INSERT INTO `map` VALUES ('g', '', '-3', '4', 162);
+INSERT INTO `map` VALUES ('g', '', '-3', '5', 163);
+INSERT INTO `map` VALUES ('g', '', '-3', '6', 164);
+INSERT INTO `map` VALUES ('g', '', '-3', '7', 165);
+INSERT INTO `map` VALUES ('g', '', '-3', '8', 166);
+INSERT INTO `map` VALUES ('g', '', '-3', '9', 167);
+INSERT INTO `map` VALUES ('g', '', '-3', '10', 168);
+INSERT INTO `map` VALUES ('g', '', '-2', '-10', 169);
+INSERT INTO `map` VALUES ('g', '', '-2', '-9', 170);
+INSERT INTO `map` VALUES ('g', '', '-2', '-8', 171);
+INSERT INTO `map` VALUES ('v', 'Sweet like chocolate', '-2', '-7', 172);
+INSERT INTO `map` VALUES ('g', '', '-2', '-6', 173);
+INSERT INTO `map` VALUES ('g', '', '-2', '-5', 174);
+INSERT INTO `map` VALUES ('g', '', '-2', '-4', 175);
+INSERT INTO `map` VALUES ('g', '', '-2', '-3', 176);
+INSERT INTO `map` VALUES ('g', '', '-2', '-2', 177);
+INSERT INTO `map` VALUES ('g', '', '-2', '-1', 178);
+INSERT INTO `map` VALUES ('g', '', '-2', '0', 179);
+INSERT INTO `map` VALUES ('g', '', '-2', '1', 180);
+INSERT INTO `map` VALUES ('v', 'krusher', '-2', '2', 181);
+INSERT INTO `map` VALUES ('g', '', '-2', '3', 182);
+INSERT INTO `map` VALUES ('v', 'cazza', '-2', '4', 183);
+INSERT INTO `map` VALUES ('g', '', '-2', '5', 184);
+INSERT INTO `map` VALUES ('v', 'SirAethelred', '-2', '6', 185);
+INSERT INTO `map` VALUES ('g', '', '-2', '7', 186);
+INSERT INTO `map` VALUES ('g', '', '-2', '8', 187);
+INSERT INTO `map` VALUES ('g', '', '-2', '9', 188);
+INSERT INTO `map` VALUES ('v', 'tim', '-2', '10', 189);
+INSERT INTO `map` VALUES ('g', '', '-1', '-10', 190);
+INSERT INTO `map` VALUES ('g', '', '-1', '-9', 191);
+INSERT INTO `map` VALUES ('g', '', '-1', '-8', 192);
+INSERT INTO `map` VALUES ('g', '', '-1', '-7', 193);
+INSERT INTO `map` VALUES ('g', '', '-1', '-6', 194);
+INSERT INTO `map` VALUES ('g', '', '-1', '-5', 195);
+INSERT INTO `map` VALUES ('v', 'rob789', '-1', '-4', 196);
+INSERT INTO `map` VALUES ('g', '', '-1', '-3', 197);
+INSERT INTO `map` VALUES ('g', '', '-1', '-2', 198);
+INSERT INTO `map` VALUES ('g', '', '-1', '-1', 199);
+INSERT INTO `map` VALUES ('v', 'Oakley', '-1', '0', 200);
+INSERT INTO `map` VALUES ('v', 'rob', '-1', '1', 201);
+INSERT INTO `map` VALUES ('g', '', '-1', '2', 202);
+INSERT INTO `map` VALUES ('g', '', '-1', '3', 203);
+INSERT INTO `map` VALUES ('g', '', '-1', '4', 204);
+INSERT INTO `map` VALUES ('g', '', '-1', '5', 205);
+INSERT INTO `map` VALUES ('g', '', '-1', '6', 206);
+INSERT INTO `map` VALUES ('g', '', '-1', '7', 207);
+INSERT INTO `map` VALUES ('g', '', '-1', '8', 208);
+INSERT INTO `map` VALUES ('g', '', '-1', '9', 209);
+INSERT INTO `map` VALUES ('g', '', '-1', '10', 210);
+INSERT INTO `map` VALUES ('g', '', '0', '-10', 211);
+INSERT INTO `map` VALUES ('g', '', '0', '-9', 212);
+INSERT INTO `map` VALUES ('g', '', '0', '-8', 213);
+INSERT INTO `map` VALUES ('g', '', '0', '-7', 214);
+INSERT INTO `map` VALUES ('v', 'Oakers', '0', '-6', 215);
+INSERT INTO `map` VALUES ('g', '', '0', '-5', 216);
+INSERT INTO `map` VALUES ('g', '', '0', '-4', 217);
+INSERT INTO `map` VALUES ('g', '', '0', '-3', 218);
+INSERT INTO `map` VALUES ('g', '', '0', '-2', 219);
+INSERT INTO `map` VALUES ('v', 'roberttwat', '0', '-1', 220);
+INSERT INTO `map` VALUES ('v', 'Lord Apricot', '0', '0', 221);
+INSERT INTO `map` VALUES ('g', '', '0', '1', 222);
+INSERT INTO `map` VALUES ('g', '', '0', '2', 223);
+INSERT INTO `map` VALUES ('g', '', '0', '3', 224);
+INSERT INTO `map` VALUES ('g', '', '0', '4', 225);
+INSERT INTO `map` VALUES ('g', '', '0', '5', 226);
+INSERT INTO `map` VALUES ('g', '', '0', '6', 227);
+INSERT INTO `map` VALUES ('g', '', '0', '7', 228);
+INSERT INTO `map` VALUES ('g', '', '0', '8', 229);
+INSERT INTO `map` VALUES ('g', '', '0', '9', 230);
+INSERT INTO `map` VALUES ('g', '', '0', '10', 231);
+INSERT INTO `map` VALUES ('g', '', '1', '-10', 232);
+INSERT INTO `map` VALUES ('g', '', '1', '-9', 233);
+INSERT INTO `map` VALUES ('g', '', '1', '-8', 234);
+INSERT INTO `map` VALUES ('g', '', '1', '-7', 235);
+INSERT INTO `map` VALUES ('g', '', '1', '-6', 236);
+INSERT INTO `map` VALUES ('g', '', '1', '-5', 237);
+INSERT INTO `map` VALUES ('g', '', '1', '-4', 238);
+INSERT INTO `map` VALUES ('g', '', '1', '-3', 239);
+INSERT INTO `map` VALUES ('g', '', '1', '-2', 240);
+INSERT INTO `map` VALUES ('g', '', '1', '-1', 241);
+INSERT INTO `map` VALUES ('g', '', '1', '0', 242);
+INSERT INTO `map` VALUES ('v', 'quantumstate', '1', '1', 243);
+INSERT INTO `map` VALUES ('g', '', '1', '2', 244);
+INSERT INTO `map` VALUES ('g', '', '1', '3', 245);
+INSERT INTO `map` VALUES ('g', '', '1', '4', 246);
+INSERT INTO `map` VALUES ('g', '', '1', '5', 247);
+INSERT INTO `map` VALUES ('g', '', '1', '6', 248);
+INSERT INTO `map` VALUES ('g', '', '1', '7', 249);
+INSERT INTO `map` VALUES ('g', '', '1', '8', 250);
+INSERT INTO `map` VALUES ('g', '', '1', '9', 251);
+INSERT INTO `map` VALUES ('v', 'cazza', '1', '10', 252);
+INSERT INTO `map` VALUES ('g', '', '2', '-10', 253);
+INSERT INTO `map` VALUES ('g', '', '2', '-9', 254);
+INSERT INTO `map` VALUES ('v', 'robert', '2', '-8', 255);
+INSERT INTO `map` VALUES ('g', '', '2', '-7', 256);
+INSERT INTO `map` VALUES ('g', '', '2', '-6', 257);
+INSERT INTO `map` VALUES ('g', '', '2', '-5', 258);
+INSERT INTO `map` VALUES ('g', '', '2', '-4', 259);
+INSERT INTO `map` VALUES ('g', '', '2', '-3', 260);
+INSERT INTO `map` VALUES ('g', '', '2', '-2', 261);
+INSERT INTO `map` VALUES ('g', '', '2', '-1', 262);
+INSERT INTO `map` VALUES ('g', '', '2', '0', 263);
+INSERT INTO `map` VALUES ('g', '', '2', '1', 264);
+INSERT INTO `map` VALUES ('g', '', '2', '2', 265);
+INSERT INTO `map` VALUES ('v', 'death by chocolate', '2', '3', 266);
+INSERT INTO `map` VALUES ('g', '', '2', '4', 267);
+INSERT INTO `map` VALUES ('g', '', '2', '5', 268);
+INSERT INTO `map` VALUES ('g', '', '2', '6', 269);
+INSERT INTO `map` VALUES ('g', '', '2', '7', 270);
+INSERT INTO `map` VALUES ('g', '', '2', '8', 271);
+INSERT INTO `map` VALUES ('g', '', '2', '9', 272);
+INSERT INTO `map` VALUES ('g', '', '2', '10', 273);
+INSERT INTO `map` VALUES ('g', '', '3', '-10', 274);
+INSERT INTO `map` VALUES ('g', '', '3', '-9', 275);
+INSERT INTO `map` VALUES ('g', '', '3', '-8', 276);
+INSERT INTO `map` VALUES ('g', '', '3', '-7', 277);
+INSERT INTO `map` VALUES ('g', '', '3', '-6', 278);
+INSERT INTO `map` VALUES ('g', '', '3', '-5', 279);
+INSERT INTO `map` VALUES ('g', '', '3', '-4', 280);
+INSERT INTO `map` VALUES ('g', '', '3', '-3', 281);
+INSERT INTO `map` VALUES ('g', '', '3', '-2', 282);
+INSERT INTO `map` VALUES ('g', '', '3', '-1', 283);
+INSERT INTO `map` VALUES ('g', '', '3', '0', 284);
+INSERT INTO `map` VALUES ('g', '', '3', '1', 285);
+INSERT INTO `map` VALUES ('g', '', '3', '2', 286);
+INSERT INTO `map` VALUES ('v', 'Jane', '3', '3', 287);
+INSERT INTO `map` VALUES ('g', '', '3', '4', 288);
+INSERT INTO `map` VALUES ('g', '', '3', '5', 289);
+INSERT INTO `map` VALUES ('v', 'god of evil tedz', '3', '6', 290);
+INSERT INTO `map` VALUES ('g', '', '3', '7', 291);
+INSERT INTO `map` VALUES ('g', '', '3', '8', 292);
+INSERT INTO `map` VALUES ('g', '', '3', '9', 293);
+INSERT INTO `map` VALUES ('g', '', '3', '10', 294);
+INSERT INTO `map` VALUES ('g', '', '4', '-10', 295);
+INSERT INTO `map` VALUES ('v', 'Elemental_Hero_Burstinatrix', '4', '-9', 296);
+INSERT INTO `map` VALUES ('g', '', '4', '-8', 297);
+INSERT INTO `map` VALUES ('g', '', '4', '-7', 298);
+INSERT INTO `map` VALUES ('g', '', '4', '-6', 299);
+INSERT INTO `map` VALUES ('g', '', '4', '-5', 300);
+INSERT INTO `map` VALUES ('v', 'cazza', '4', '-4', 301);
+INSERT INTO `map` VALUES ('g', '', '4', '-3', 302);
+INSERT INTO `map` VALUES ('g', '', '4', '-2', 303);
+INSERT INTO `map` VALUES ('g', '', '4', '-1', 304);
+INSERT INTO `map` VALUES ('g', '', '4', '0', 305);
+INSERT INTO `map` VALUES ('g', '', '4', '1', 306);
+INSERT INTO `map` VALUES ('g', '', '4', '2', 307);
+INSERT INTO `map` VALUES ('v', 'rob8', '4', '3', 308);
+INSERT INTO `map` VALUES ('g', '', '4', '4', 309);
+INSERT INTO `map` VALUES ('g', '', '4', '5', 310);
+INSERT INTO `map` VALUES ('g', '', '4', '6', 311);
+INSERT INTO `map` VALUES ('g', '', '4', '7', 312);
+INSERT INTO `map` VALUES ('g', '', '4', '8', 313);
+INSERT INTO `map` VALUES ('v', 'rob8', '4', '9', 314);
+INSERT INTO `map` VALUES ('g', '', '4', '10', 315);
+INSERT INTO `map` VALUES ('v', 'Rullet_Riddled', '5', '-10', 316);
+INSERT INTO `map` VALUES ('g', '', '5', '-9', 317);
+INSERT INTO `map` VALUES ('g', '', '5', '-8', 318);
+INSERT INTO `map` VALUES ('g', '', '5', '-7', 319);
+INSERT INTO `map` VALUES ('v', 'ted', '5', '-6', 320);
+INSERT INTO `map` VALUES ('g', '', '5', '-5', 321);
+INSERT INTO `map` VALUES ('g', '', '5', '-4', 322);
+INSERT INTO `map` VALUES ('g', '', '5', '-3', 323);
+INSERT INTO `map` VALUES ('g', '', '5', '-2', 324);
+INSERT INTO `map` VALUES ('g', '', '5', '-1', 325);
+INSERT INTO `map` VALUES ('g', '', '5', '0', 326);
+INSERT INTO `map` VALUES ('g', '', '5', '1', 327);
+INSERT INTO `map` VALUES ('g', '', '5', '2', 328);
+INSERT INTO `map` VALUES ('g', '', '5', '3', 329);
+INSERT INTO `map` VALUES ('v', 'St.Death', '5', '4', 330);
+INSERT INTO `map` VALUES ('g', '', '5', '5', 331);
+INSERT INTO `map` VALUES ('g', '', '5', '6', 332);
+INSERT INTO `map` VALUES ('g', '', '5', '7', 333);
+INSERT INTO `map` VALUES ('v', 'eVo_Sturgeo', '5', '8', 334);
+INSERT INTO `map` VALUES ('g', '', '5', '9', 335);
+INSERT INTO `map` VALUES ('g', '', '5', '10', 336);
+INSERT INTO `map` VALUES ('g', '', '6', '-10', 337);
+INSERT INTO `map` VALUES ('g', '', '6', '-9', 338);
+INSERT INTO `map` VALUES ('g', '', '6', '-8', 339);
+INSERT INTO `map` VALUES ('g', '', '6', '-7', 340);
+INSERT INTO `map` VALUES ('g', '', '6', '-6', 341);
+INSERT INTO `map` VALUES ('v', 'it01y2', '6', '-5', 342);
+INSERT INTO `map` VALUES ('g', '', '6', '-4', 343);
+INSERT INTO `map` VALUES ('g', '', '6', '-3', 344);
+INSERT INTO `map` VALUES ('g', '', '6', '-2', 345);
+INSERT INTO `map` VALUES ('g', '', '6', '-1', 346);
+INSERT INTO `map` VALUES ('g', '', '6', '0', 347);
+INSERT INTO `map` VALUES ('g', '', '6', '1', 348);
+INSERT INTO `map` VALUES ('v', 'purplelovemachine', '6', '2', 349);
+INSERT INTO `map` VALUES ('g', '', '6', '3', 350);
+INSERT INTO `map` VALUES ('g', '', '6', '4', 351);
+INSERT INTO `map` VALUES ('g', '', '6', '5', 352);
+INSERT INTO `map` VALUES ('g', '', '6', '6', 353);
+INSERT INTO `map` VALUES ('g', '', '6', '7', 354);
+INSERT INTO `map` VALUES ('g', '', '6', '8', 355);
+INSERT INTO `map` VALUES ('g', '', '6', '9', 356);
+INSERT INTO `map` VALUES ('g', '', '6', '10', 357);
+INSERT INTO `map` VALUES ('g', '', '7', '-10', 358);
+INSERT INTO `map` VALUES ('g', '', '7', '-9', 359);
+INSERT INTO `map` VALUES ('g', '', '7', '-8', 360);
+INSERT INTO `map` VALUES ('v', 'bulletriddler', '7', '-7', 361);
+INSERT INTO `map` VALUES ('v', 'timothy', '7', '-6', 362);
+INSERT INTO `map` VALUES ('g', '', '7', '-5', 363);
+INSERT INTO `map` VALUES ('g', '', '7', '-4', 364);
+INSERT INTO `map` VALUES ('g', '', '7', '-3', 365);
+INSERT INTO `map` VALUES ('g', '', '7', '-2', 366);
+INSERT INTO `map` VALUES ('g', '', '7', '-1', 367);
+INSERT INTO `map` VALUES ('g', '', '7', '0', 368);
+INSERT INTO `map` VALUES ('g', '', '7', '1', 369);
+INSERT INTO `map` VALUES ('g', '', '7', '2', 370);
+INSERT INTO `map` VALUES ('g', '', '7', '3', 371);
+INSERT INTO `map` VALUES ('g', '', '7', '4', 372);
+INSERT INTO `map` VALUES ('g', '', '7', '5', 373);
+INSERT INTO `map` VALUES ('g', '', '7', '6', 374);
+INSERT INTO `map` VALUES ('g', '', '7', '7', 375);
+INSERT INTO `map` VALUES ('g', '', '7', '8', 376);
+INSERT INTO `map` VALUES ('g', '', '7', '9', 377);
+INSERT INTO `map` VALUES ('g', '', '7', '10', 378);
+INSERT INTO `map` VALUES ('g', '', '8', '-10', 379);
+INSERT INTO `map` VALUES ('g', '', '8', '-9', 380);
+INSERT INTO `map` VALUES ('g', '', '8', '-8', 381);
+INSERT INTO `map` VALUES ('g', '', '8', '-7', 382);
+INSERT INTO `map` VALUES ('g', '', '8', '-6', 383);
+INSERT INTO `map` VALUES ('g', '', '8', '-5', 384);
+INSERT INTO `map` VALUES ('g', '', '8', '-4', 385);
+INSERT INTO `map` VALUES ('g', '', '8', '-3', 386);
+INSERT INTO `map` VALUES ('v', 'steve', '8', '-2', 387);
+INSERT INTO `map` VALUES ('g', '', '8', '-1', 388);
+INSERT INTO `map` VALUES ('g', '', '8', '0', 389);
+INSERT INTO `map` VALUES ('v', 'bob', '8', '1', 390);
+INSERT INTO `map` VALUES ('g', '', '8', '2', 391);
+INSERT INTO `map` VALUES ('g', '', '8', '3', 392);
+INSERT INTO `map` VALUES ('g', '', '8', '4', 393);
+INSERT INTO `map` VALUES ('v', 'robert', '8', '5', 394);
+INSERT INTO `map` VALUES ('g', '', '8', '6', 395);
+INSERT INTO `map` VALUES ('g', '', '8', '7', 396);
+INSERT INTO `map` VALUES ('g', '', '8', '8', 397);
+INSERT INTO `map` VALUES ('g', '', '8', '9', 398);
+INSERT INTO `map` VALUES ('g', '', '8', '10', 399);
+INSERT INTO `map` VALUES ('g', '', '9', '-10', 400);
+INSERT INTO `map` VALUES ('g', '', '9', '-9', 401);
+INSERT INTO `map` VALUES ('v', 'bingo', '9', '-8', 402);
+INSERT INTO `map` VALUES ('g', '', '9', '-7', 403);
+INSERT INTO `map` VALUES ('g', '', '9', '-6', 404);
+INSERT INTO `map` VALUES ('g', '', '9', '-5', 405);
+INSERT INTO `map` VALUES ('g', '', '9', '-4', 406);
+INSERT INTO `map` VALUES ('g', '', '9', '-3', 407);
+INSERT INTO `map` VALUES ('g', '', '9', '-2', 408);
+INSERT INTO `map` VALUES ('g', '', '9', '-1', 409);
+INSERT INTO `map` VALUES ('g', '', '9', '0', 410);
+INSERT INTO `map` VALUES ('g', '', '9', '1', 411);
+INSERT INTO `map` VALUES ('g', '', '9', '2', 412);
+INSERT INTO `map` VALUES ('g', '', '9', '3', 413);
+INSERT INTO `map` VALUES ('g', '', '9', '4', 414);
+INSERT INTO `map` VALUES ('g', '', '9', '5', 415);
+INSERT INTO `map` VALUES ('g', '', '9', '6', 416);
+INSERT INTO `map` VALUES ('g', '', '9', '7', 417);
+INSERT INTO `map` VALUES ('g', '', '9', '8', 418);
+INSERT INTO `map` VALUES ('g', '', '9', '9', 419);
+INSERT INTO `map` VALUES ('g', '', '9', '10', 420);
+INSERT INTO `map` VALUES ('v', 'Jane', '10', '-10', 421);
+INSERT INTO `map` VALUES ('g', '', '10', '-9', 422);
+INSERT INTO `map` VALUES ('g', '', '10', '-8', 423);
+INSERT INTO `map` VALUES ('g', '', '10', '-7', 424);
+INSERT INTO `map` VALUES ('g', '', '10', '-6', 425);
+INSERT INTO `map` VALUES ('g', '', '10', '-5', 426);
+INSERT INTO `map` VALUES ('g', '', '10', '-4', 427);
+INSERT INTO `map` VALUES ('g', '', '10', '-3', 428);
+INSERT INTO `map` VALUES ('g', '', '10', '-2', 429);
+INSERT INTO `map` VALUES ('g', '', '10', '-1', 430);
+INSERT INTO `map` VALUES ('g', '', '10', '0', 431);
+INSERT INTO `map` VALUES ('g', '', '10', '1', 432);
+INSERT INTO `map` VALUES ('g', '', '10', '2', 433);
+INSERT INTO `map` VALUES ('g', '', '10', '3', 434);
+INSERT INTO `map` VALUES ('v', 'snowy', '10', '4', 435);
+INSERT INTO `map` VALUES ('g', '', '10', '5', 436);
+INSERT INTO `map` VALUES ('g', '', '10', '6', 437);
+INSERT INTO `map` VALUES ('g', '', '10', '7', 438);
+INSERT INTO `map` VALUES ('v', 'Sweet as Moonshine', '10', '8', 439);
+INSERT INTO `map` VALUES ('g', '', '10', '9', 440);
+INSERT INTO `map` VALUES ('g', '', '10', '10', 441);
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `players`
+-- 
+
+CREATE TABLE `players` (
+  `id` int(11) NOT NULL auto_increment,
+  `username` text NOT NULL,
+  `password` text NOT NULL,
+  `email` text NOT NULL,
+  `online` bigint(20) NOT NULL,
+  `civ` tinyint(4) NOT NULL,
+  `production` text NOT NULL,
+  `resources` text NOT NULL,
+  `buildings` text NOT NULL,
+  `units` text NOT NULL,
+  `unitposs` text NOT NULL,
+  `unitconstruction` text NOT NULL,
+  `position` text NOT NULL,
+  `construction` text NOT NULL,
+  `resourcefields` text NOT NULL,
+  `resourceconstruction` text NOT NULL,
+  `alliance` text NOT NULL,
+  `pop` int(11) NOT NULL,
+  `unitpop` text NOT NULL,
+  `rank` int(11) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=75 ;
+
+-- 
+-- Dumping data for table `players`
+-- 
+
+INSERT INTO `players` VALUES (50, 'snowy', '7a518b75de', 'snowy129@hotmail.co.uk', 1147961310, 2, '61|52|29|99|67', '1950|1950|1241.27000077|1950|875.977499897|1950|1898.3025|1950|1500|1500|47|67', 'tc|5|ba|5|st|0|mg|1|sw|0', '', 'inf', 'inf|6|inf|6|inf|3|inf|3|inf|10|', '10,4', '', 'c|7|g|2|s|3|c|1|s|3|g|2|s|2|b|1|w|2|b|1|w|3|b|1|g|2|b|2|g|3|w|2|g|2|w|3|c|1|w|2|b|1|g|1|g|2|s|2', '', '', 47, '', 5);
+INSERT INTO `players` VALUES (73, 'kornboy', 'e930f97601', 'alexwozere130@hotmail.com', 1147545658, 3, '25|20|25|15|35', '1500|1500|1500|1500|1500|1500|1500|1500|1500|1500|15|35', 'tc|1|ba|0|st|0|mg|0|sw|0|wa|1|bk|1', '', 'inf', '', '-9,1', '', 'c|1|w|1|s|1|g|1|s|1|w|1|w|1|g|1|g|1|b|1|g|1|b|1|c|1|b|1|b|1|s|1|g|1|c|1|g|1|w|1|b|1|g|1|w|1|s|1', '', '', 15, '', 21);
+INSERT INTO `players` VALUES (25, 'Lord Apricot', 'grimreaper666', 'iluvxbox@hotmail.co.uk', 1147943177, 3, '29|32|29|19|51', '1950|1950|1950|1950|1950|1950|1950|1950|1950|1950|34|51', 'tc|5|ba|1|st|0|mg|1|sw|0', '', 'inf', '', '0,0', '', 'g|3|b|1|g|1|s|2|g|1|w|2|w|1|s|2|b|1|s|2|g|1|g|2|b|1|w|1|w|1|w|1|b|2|c|2|b|1|c|1|g|1|g|1|c|1|s|1', '', '', 34, '', 10);
+INSERT INTO `players` VALUES (23, 'kidnapped_by_david_alexander', 'pass.word', 'coloneljacko500@hotmail.com', 1147431492, 4, '25|20|25|15|35', '1500|1500|1500|1500|1500|1500|1500|1500|1500|1500|17|35', 'tc|2|ba|0|st|0|mg|0|sw|0', '', 'inf', '', '', '', 'g|1|b|1|g|1|s|1|g|1|w|1|w|1|s|1|b|1|s|1|g|1|g|1|b|1|w|1|w|1|w|1|b|1|c|1|b|1|c|1|g|1|g|1|c|1|s|1', '', '', 17, '', 16);
+INSERT INTO `players` VALUES (24, 'quantumstate', 'db406eb7f12d1540322a3bb45bdc56ee', 'ebdyandjonathan@hotmail.com', 1147980888, 3, '265|248|149|35|267', '8514.56278082|9412|8658.15999992|9412|7264.49166414|9412|7905.4249977|9412|7240|7240|131|267', 'tc|7|ba|6|st|1|mg|1|sw|1|wa|7|bk|6', 'inf|754', 'inf', 'inf|99|inf|43|inf|1|inf|1', '1,1', 'bk|7|1147982201', 'g|2|b|8|g|10|s|10|g|2|w|3|w|4|s|4|b|1|s|3|g|4|g|2|b|2|w|10|w|3|w|3|b|2|c|2|b|2|c|2|g|2|g|3|c|3|s|3', '2|9|1147981864', 'The Gods', 131, '754', 2);
+INSERT INTO `players` VALUES (21, 'Oakley', 'f7c1dcfa55eb2d61faf4f5c612282eb0', 'oakleyski', 1147975487, 3, '285|284|109|63|435', '7810.92916676|9412|1107.45111291|9412|2758.7063944|9412|8463.6975|9412|9412|9412|167|435', 'tc|12|ba|6|st|6|mg|4|sw|2|wa|7|bk|7', '', 'inf', 'inf|10|inf|10|inf|1|inf|5|inf|1|', '-1,0', '', 'g|6|b|3|g|5|s|6|g|6|w|5|w|6|s|7|b|3|s|6|g|6|g|6|b|4|w|5|w|6|w|6|b|4|c|3|b|3|c|3|g|6|g|6|c|4|s|6', '', '', 167, '', 1);
+INSERT INTO `players` VALUES (29, 'Me', '3b79c61c2c', 'chrisdacosta371@hotmail.com', 1146053303, 1, '25|20|25|15|35', '1500|1500|1500|1500|1500|1500|1500|1500|1500|1500|15|35', 'tc|1|ba|0|st|0|mg|0|sw|0', '', 'inf', '', '', '', 'g|1|b|1|g|1|s|1|g|1|w|1|w|1|s|1|b|1|s|1|g|1|g|1|b|1|w|1|w|1|w|1|b|1|c|1|b|1|c|1|g|1|g|1|c|1|s|1', '', '', 15, '', 22);
+INSERT INTO `players` VALUES (31, 'big man jimmy', 'tomato', 'big_man_jimmy@hotmail.com', 1146128780, 3, '25|20|25|15|35', '1500|1500|1500|1500|1500|1500|1500|1500|1500|1500|15|35', 'tc|1|ba|0|st|0|mg|0|sw|0', '', 'inf', '', '', '', 'g|1|b|1|g|1|s|1|g|1|w|1|w|1|s|1|b|1|s|1|g|1|g|1|b|1|w|1|w|1|w|1|b|1|c|1|b|1|c|1|g|1|g|1|c|1|s|1', '', '', 15, '', 23);
+INSERT INTO `players` VALUES (32, 'Banny', '72cb2e2f67', 'adamski99@btinternet.com', 1146128866, 3, '25|20|25|15|35', '1500|1500|1500|1500|1500|1500|1500|1500|1500|1500|15|35', 'tc|1|ba|0|st|0|mg|0|sw|0', '', 'inf', '', '', '', 'g|1|b|1|g|1|s|1|g|1|w|1|w|1|s|1|b|1|s|1|g|1|g|1|b|1|w|1|w|1|w|1|b|1|c|1|b|1|c|1|g|1|g|1|c|1|s|1', '', '', 15, '', 24);
+INSERT INTO `players` VALUES (33, 'sarquin', '7d01f4fb13', 'R_O_Tilson@hotmail.co.uk', 1146129408, 3, '25|20|25|15|35', '1500|1500|1500|1500|1500|1500|1500|1500|1500|1500|15|35', 'tc|1|ba|0|st|0|mg|0|sw|0', '', 'inf', '', '', '', 'g|1|b|1|g|1|s|1|g|1|w|1|w|1|s|1|b|1|s|1|g|1|g|1|b|1|w|1|w|1|w|1|b|1|c|1|b|1|c|1|g|1|g|1|c|1|s|1', '', '', 15, '', 25);
+INSERT INTO `players` VALUES (34, 'the god of the big evil', 'a39a5a1812', 'adam91eaton@aol.com', 1146129448, 3, '25|20|25|15|35', '1500|1500|1500|1500|1500|1500|1500|1500|1500|1500|15|35', 'tc|1|ba|0|st|0|mg|0|sw|0', '', 'inf', '', '', '', 'g|1|b|1|g|1|s|1|g|1|w|1|w|1|s|1|b|1|s|1|g|1|g|1|b|1|w|1|w|1|w|1|b|1|c|1|b|1|c|1|g|1|g|1|c|1|s|1', '', '', 15, '', 26);
+INSERT INTO `players` VALUES (36, 'god of moo cows', '1beab6d898', 'silver_ace@hotmail.co.uk', 1146129984, 4, '25|20|25|15|35', '1500|1500|1500|1500|1500|1500|1500|1500|1500|1500|15|35', 'tc|1|ba|0|st|0|mg|0|sw|0', '', 'inf', '', '', '', 'g|1|b|1|g|1|s|1|g|1|w|1|w|1|s|1|b|1|s|1|g|1|g|1|b|1|w|1|w|1|w|1|b|1|c|1|b|1|c|1|g|1|g|1|c|1|s|1', '', '', 15, '', 27);
+INSERT INTO `players` VALUES (41, 'nicholashill', 'skates03', 'nick_hilluk03@btinternet.com', 1146570746, 3, '25|20|25|15|35', '1500|1500|1500|1500|1500|1500|1500|1500|1500|1500|15|35', 'tc|2|ba|0|st|0|mg|0|sw|0', '', 'inf', '', '', '', 'g|1|b|1|g|1|s|1|g|1|w|1|w|1|s|1|b|1|s|1|g|1|g|1|b|1|w|1|w|1|w|1|b|1|c|1|b|1|c|1|g|1|g|1|c|1|s|1', '', '', 15, '', 28);
+INSERT INTO `players` VALUES (42, 'xyzgames', '64019892', 'xyzgames@msn.com', 1147980915, 3, '245|240|193|35|151', '7240|7240|7240|7240|7240|7240|5041.04611172|7240|4284|4284|124|151', 'tc|7|ba|5|st|2|mg|2|sw|1|wa|6|bk|4', '', 'inf', 'inf|14|', '-3,-3', '', 'g|7|b|5|g|2|s|5|g|3|w|6|w|5|s|6|b|5|s|6|g|2|g|2|b|4|w|5|w|5|w|5|b|5|c|2|b|4|c|2|g|2|g|2|c|3|s|6', '', '', 124, '', 3);
+INSERT INTO `players` VALUES (65, 'Mrs Moffat', '19b81d7ef3', 'lizmoffat@yahoo.co.uk', 1147432189, 3, '25|20|29|15|35', '1500|1500|1500|1500|1500|1500|1500|1500|1500|1500|18|35', 'tc|2|ba|0|st|0|mg|0|sw|0|wa|1|bk|1', '', 'inf', '', '-7,-10', '', 'b|1|w|1|c|1|b|1|g|1|w|1|b|2|b|1|g|1|g|1|w|1|s|1|s|1|c|1|b|1|s|1|g|1|c|1|w|1|g|1|s|1|w|1|g|1|g|1', '', '', 18, '', 15);
+INSERT INTO `players` VALUES (51, 'St.Death', 'llamodebarro', 'adamski99@btinternet.com', 1146820379, 3, '25|20|25|15|35', '1500|1500|1500|1500|1500|1500|1500|1500|1500|1500|15|35', 'tc|1|ba|0|st|0|mg|0|sw|0', '', 'inf', '', '5,4', '', 'b|1|s|1|c|1|w|1|s|1|s|1|g|1|b|1|w|1|w|1|s|1|g|1|b|1|g|1|w|1|b|1|g|1|c|1|g|1|b|1|g|1|g|1|c|1|w|1', '', '', 15, '', 29);
+INSERT INTO `players` VALUES (49, 'tim', 'it02d26', 'it02d26', 1147960523, 3, '33|20|33|19|43', '1950|1950|1950|1950|1950|1950|1950|1950|1950|1950|25|43', 'tc|2|ba|0|st|0|mg|0|sw|0', '', 'inf', '', '-2,10', '', 's|1|s|1|w|2|s|1|g|1|c|1|b|2|w|2|w|1|g|1|g|2|w|1|g|2|s|1|c|2|w|1|b|1|b|1|b|2|g|1|g|1|c|1|b|1|g|1', '', '', 25, '', 12);
+INSERT INTO `players` VALUES (71, 'rob', '1fa92c57ed', 'ichhabezwwe@hotmailo.com', 1147461171, 1, '25|20|25|15|35', '1500|1500|1500|1500|1500|1500|1500|1500|1500|1500|15|35', 'tc|1|ba|0|st|0|mg|0|sw|0|wa|1|bk|1', '', 'inf', '', '-1,1', '', 'w|1|s|1|g|1|s|1|b|1|b|1|w|1|g|1|c|1|s|1|c|1|s|1|c|1|g|1|g|1|g|1|w|1|w|1|g|1|b|1|b|1|w|1|g|1|b|1', '', '', 15, '', 30);
+INSERT INTO `players` VALUES (52, 'Jane', 'france84', 'jane.e.waller@btinternet.com', 1147006009, 3, '25|20|25|15|35', '1500|1500|1500|1500|1500|1500|1500|1500|1500|1500|17|35', 'tc|2|ba|0|st|0|mg|0|sw|0|wa|1|bk|1', '', 'inf', '', '3,3', '', 'g|1|w|1|g|1|s|1|c|1|c|1|g|1|b|1|s|1|c|1|w|1|g|1|b|1|b|1|s|1|w|1|b|1|b|1|s|1|w|1|g|1|g|1|g|1|w|1', '', '', 17, '', 17);
+INSERT INTO `players` VALUES (53, 'olabajing', 'cheesecake', 'olabajing@gmail.com', 1147089925, 4, '25|20|25|19|35', '1500|1500|1500|1500|1500|1500|1500|1500|2535|2535|17|35', 'tc|1|ba|0|st|0|mg|0|sw|0|wa|1|bk|2', '', 'inf', '', '-6,0', '', 'w|1|b|1|s|1|b|1|s|1|w|1|s|1|g|1|c|2|g|1|s|1|w|1|w|1|b|1|g|1|c|1|g|1|g|1|g|1|w|1|g|1|b|1|b|1|c|1', '', '', 17, '', 18);
+INSERT INTO `players` VALUES (54, 'Chav Man', 'Chav Man', 'chrisdacosta371@hotmail.com', 1147979882, 4, '25|20|25|19|35', '1500|1500|1500|1500|1500|1500|1500|1500|1500|1500|16|35', 'tc|1|ba|0|st|0|mg|0|sw|0|wa|1|bk|1', '', 'inf', '', '-7,-6', '', 's|1|b|1|g|1|b|1|w|1|g|1|g|1|g|1|w|1|g|1|c|1|s|1|c|1|b|1|g|1|b|1|s|1|c|2|b|1|s|1|w|1|g|1|w|1|w|1', '', '', 16, '', 20);
+INSERT INTO `players` VALUES (57, 'death by chocolate', 'Celes', 'freedom_virtuoso@hotmail.co.uk', 1147961221, 1, '37|32|37|27|47', '1205.66083742|3296|1937.70665805|3296|3296|3296|3296|3296|3296|3296|47|47', 'tc|5|ba|5|st|0|mg|1|sw|0|wa|3|bk|3', '', 'inf', '', '2,3', '', 'c|1|b|3|b|1|g|1|w|3|w|1|c|3|b|1|g|1|s|1|s|1|g|1|g|3|w|1|s|3|c|1|g|1|g|1|s|1|w|1|g|1|b|1|w|1|b|1', '', '', 47, '', 6);
+INSERT INTO `players` VALUES (55, 'it01y2', 'rob', 'ichhabezwei@hotmail.com', 1147977263, 4, '25|20|25|15|39', '1500|1500|1500|1500|1500|1500|1500|1500|1500|1500|17|39', 'tc|2|ba|0|st|0|mg|0|sw|0|wa|1|bk|1', '', 'inf', '', '6,-5', '', 'g|1|g|1|g|1|b|1|g|1|s|1|b|1|g|2|w|1|g|1|w|1|b|1|c|1|c|1|s|1|w|1|w|1|w|1|b|1|c|1|b|1|s|1|s|1|g|1', '', '', 17, '', 19);
+INSERT INTO `players` VALUES (64, 'krusher', 'zaravix', 'r_O_Tilson@hotmail.co.uk', 1147781673, 4, '29|24|37|19|47', '1500|1500|1500|1500|1500|1500|1500|1500|2535|2535|43|47', 'tc|4|ba|1|st|0|mg|1|sw|0|wa|1|bk|2', '', 'inf', 'inf|12|', '-2,2', '', 'c|1|b|1|s|1|w|1|s|1|s|2|w|2|g|1|b|1|g|1|c|2|w|1|b|1|b|3|b|1|g|1|c|1|g|3|s|1|w|1|g|1|g|1|w|1|g|1', '', '', 43, '', 9);
+INSERT INTO `players` VALUES (58, 'SirAethelred', 'Saints', 'Bartoneagle@aol.com', 1147942786, 2, '33|32|33|19|35', '1742.73416709|2535|2535|2535|2535|2535|2535|2535|2535|2535|47|35', 'tc|4|ba|2|st|0|mg|1|sw|0|wa|2|bk|2', '', 'inf', 'inf|10|', '-2,6', '', 'w|2|s|2|g|1|g|1|s|2|b|2|g|1|c|1|b|2|g|1|w|1|w|1|c|2|s|2|g|1|g|1|w|2|g|1|b|1|b|1|b|1|w|1|s|1|c|1', '', '', 47, '', 7);
+INSERT INTO `players` VALUES (69, 'bob', '41c5ac12fe', 'r_O_Tilson@hotmail.co.uk', 1147453411, 1, '25|20|25|15|35', '1500|1500|1500|1500|1500|1500|1500|1500|1500|1500|15|35', 'tc|1|ba|0|st|0|mg|0|sw|0|wa|1|bk|1', '', 'inf', '', '8,1', '', 'b|1|g|1|s|1|b|1|b|1|c|1|c|1|w|1|g|1|s|1|s|1|c|1|w|1|g|1|w|1|w|1|g|1|g|1|w|1|b|1|s|1|g|1|g|1|b|1', '', '', 15, '', 31);
+INSERT INTO `players` VALUES (68, 'Sweet as Moonshine', 'llamodebarro', 'project_rub_ds@hotmail.com', 1147461316, 3, '29|20|25|19|35', '1500|1500|1500|1500|1500|1500|1500|1500|1500|1500|21|35', 'tc|3|ba|0|st|0|mg|0|sw|0|wa|1|bk|1', '', 'inf', '', '10,8', '', 'w|1|g|1|g|1|w|1|w|1|g|1|g|1|w|1|s|1|c|2|s|1|b|1|g|1|g|1|s|1|g|1|s|1|w|2|b|1|b|1|c|1|c|1|b|1|b|1', '', '', 21, '', 14);
+INSERT INTO `players` VALUES (66, 'god of evil tedz', 'wipeout', 'adam91eaton@aol.com', 1147971255, 4, '41|20|25|15|63', '1433.12888583|1500|1109.39999727|1500|1257.25000364|1500|1500|1500|1500|1500|47|63', 'tc|5|ba|1|st|0|mg|1|sw|0|wa|1|bk|1', '', 'inf', 'inf|7|inf|10|', '3,6', '', 'w|1|b|1|b|1|b|1|c|1|g|2|g|1|c|1|w|1|g|1|w|1|g|1|g|1|g|1|c|1|w|3|s|1|b|1|w|2|g|4|s|1|b|1|s|1|s|1', '', '', 47, '', 8);
+INSERT INTO `players` VALUES (59, 'boffdude', 'robisgod', 'boff_dude@hotmail.com', 1147856954, 1, '62|48|62|34|74', '2535|2535|2535|2535|2535|2535|2535|2535|1500|1500|25|74', 'tc|4|ba|0|st|0|mg|0|sw|0|wa|2|bk|1', '', 'inf', '', '-6,-3', '', 'w|2|s|2|g|2|g|1|s|2|b|2|g|1|c|1|b|1|g|1|w|1|w|1|c|2|s|1|g|1|g|1|w|2|g|1|b|1|b|1|b|1|w|1|s|1|c|1|||||||b|2|b|2|s|1|w|2|w|1|b|1|g|1|c|1|g|1|s|1|g|1|s|1|c|1|b|1|g|1|w|1|w|1|g|1|s|1|g|1|g|1|c|1|w|1|b|1', '', '', 25, '', 13);
+INSERT INTO `players` VALUES (72, 'Oakers', 'it02p29', 'oakleyski@aol.com', 1147975541, 1, '37|28|25|23|47', '156.971389867|2535|116.082222904|2535|102.687502931|2535|93.6724966657|2535|1500|1500|33|47', 'tc|4|ba|1|st|0|mg|1|sw|0|wa|2|bk|1', '', 'inf', '', '0,-6', '', 'b|1|s|1|g|1|s|2|b|1|s|1|g|1|c|2|b|1|s|2|b|1|w|2|w|2|w|2|c|2|g|1|w|1|b|1|g|2|g|2|w|1|g|1|c|1|g|2', '', '', 33, '', 11);
+INSERT INTO `players` VALUES (70, 'ted', '7c05fa09d2', 'r_O_Tilson@hotmail.co.uk', 1147453522, 2, '25|20|25|15|35', '1500|1500|1500|1500|1500|1500|1500|1500|1500|1500|15|35', 'tc|1|ba|0|st|0|mg|0|sw|0|wa|1|bk|1', '', 'inf', '', '5,-6', '', 'b|1|g|1|s|1|g|1|s|1|b|1|g|1|b|1|b|1|c|1|s|1|g|1|c|1|w|1|g|1|w|1|s|1|g|1|c|1|b|1|w|1|w|1|g|1|w|1', '', '', 15, '', 32);
+INSERT INTO `players` VALUES (63, 'purplelovemachine', 'satisfy', 'r_O_Tilson@hotmail.co.uk', 1147896018, 3, '57|56|29|39|87', '3276.14916856|3296|3296|3296|2518.64137554|3296|3296|3296|2535|2535|65|79', 'tc|6|ba|4|st|0|mg|0|sw|0|wa|3|bk|2', '', 'inf', 'inf|10|inf|3|', '6,2', '', 'w|2|b|1|g|1|g|1|g|1|s|1|s|4|w|2|w|1|c|3|w|3|s|3|b|1|g|2|s|1|b|1|b|1|c|3|b|2|w|3|g|3|g|4|c|1|g|3', '', '', 65, '', 4);
+INSERT INTO `players` VALUES (67, 'Sweet like chocolate', '1187018ac5', 'project_rub_ds@hotmail.com', 1147433529, 3, '25|20|25|15|35', '1500|1500|1500|1500|1500|1500|1500|1500|1500|1500|15|35', 'tc|1|ba|0|st|0|mg|0|sw|0|wa|1|bk|1', '', 'inf', '', '-2,-7', '', 'g|1|w|1|g|1|s|1|b|1|c|1|g|1|s|1|w|1|b|1|s|1|w|1|b|1|c|1|g|1|b|1|w|1|g|1|w|1|c|1|s|1|b|1|g|1|g|1', '', '', 15, '', 33);
+INSERT INTO `players` VALUES (74, 'black star', 'bd65fd96ae', 'ebdyandjonathan@hotmail.com', 1147976648, 2, '25|20|25|15|39', '1402.20138907|1500|1421.76111093|1500|1464.20138907|1500|1478.32083336|1500|1500|1500|15|39', 'tc|1|ba|0|st|0|mg|0|sw|0|wa|1|bk|1', '', '', '', '-10,-1', '', 'w|1|g|1|g|2|w|1|g|1|w|1|s|1|b|1|g|1|c|1|c|1|w|1|b|1|c|1|w|1|s|1|g|1|g|1|s|1|b|1|s|1|g|1|b|1|b|1', '', '', 15, '', 34);
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `queue`
+-- 
+
+CREATE TABLE `queue` (
+  `id` int(11) NOT NULL auto_increment,
+  `player` text NOT NULL,
+  `time` bigint(20) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=216 ;
+
+-- 
+-- Dumping data for table `queue`
+-- 
+
+INSERT INTO `queue` VALUES (215, 'quantumstate', 1147982201);
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `resource`
+-- 
+
+CREATE TABLE `resource` (
+  `time` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- 
+-- Dumping data for table `resource`
+-- 
+
+INSERT INTO `resource` VALUES ('1147980871');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `resqueue`
+-- 
+
+CREATE TABLE `resqueue` (
+  `id` int(11) NOT NULL auto_increment,
+  `player` text NOT NULL,
+  `time` bigint(20) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=378 ;
+
+-- 
+-- Dumping data for table `resqueue`
+-- 
+
+INSERT INTO `resqueue` VALUES (377, 'quantumstate', 1147981864);
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `trade`
+-- 
+
+CREATE TABLE `trade` (
+  `id` int(11) NOT NULL auto_increment,
+  `from` text NOT NULL,
+  `to` text NOT NULL,
+  `resources` text NOT NULL,
+  `time` bigint(20) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=41 ;
+
+-- 
+-- Dumping data for table `trade`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `unitqueue`
+-- 
+
+CREATE TABLE `unitqueue` (
+  `id` int(11) NOT NULL auto_increment,
+  `player` text NOT NULL,
+  `time` bigint(20) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=239 ;
+
+-- 
+-- Dumping data for table `unitqueue`
+-- 
+
+INSERT INTO `unitqueue` VALUES (233, 'quantumstate', 1147981397);
+INSERT INTO `unitqueue` VALUES (234, 'quantumstate', 1147981402);
+INSERT INTO `unitqueue` VALUES (235, 'quantumstate', 1147981408);
+INSERT INTO `unitqueue` VALUES (236, 'quantumstate', 1147981413);
+INSERT INTO `unitqueue` VALUES (237, 'quantumstate', 1147981418);
+INSERT INTO `unitqueue` VALUES (238, 'quantumstate', 1147981423);
+INSERT INTO `unitqueue` VALUES (225, 'quantumstate', 1147981352);
+INSERT INTO `unitqueue` VALUES (226, 'quantumstate', 1147981357);
+INSERT INTO `unitqueue` VALUES (227, 'quantumstate', 1147981362);
+INSERT INTO `unitqueue` VALUES (228, 'quantumstate', 1147981367);
+INSERT INTO `unitqueue` VALUES (229, 'quantumstate', 1147981372);
+INSERT INTO `unitqueue` VALUES (230, 'quantumstate', 1147981382);
+INSERT INTO `unitqueue` VALUES (231, 'quantumstate', 1147981387);
+INSERT INTO `unitqueue` VALUES (232, 'quantumstate', 1147981392);
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `units`
+-- 
+
+CREATE TABLE `units` (
+  `id` int(11) NOT NULL auto_increment,
+  `abbr` text NOT NULL,
+  `name` text NOT NULL,
+  `resources` text NOT NULL,
+  `time` bigint(20) NOT NULL,
+  `pop` text NOT NULL,
+  `attack` text NOT NULL,
+  `defence` text NOT NULL,
+  `speed` text NOT NULL,
+  `type` text NOT NULL,
+  `civ` text NOT NULL,
+  `picture` text NOT NULL,
+  `carry` text NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+
+-- 
+-- Dumping data for table `units`
+-- 
+
+INSERT INTO `units` VALUES (1, 'inf', 'Infantry', '40|1|70|40|70', 900, '1', '30|30|30', '30|20|30', '15', '0', '1', 'in.gif', '40');
+INSERT INTO `units` VALUES (2, 'hinf', 'Heavy Infantry', '40|1|70|40|70', 900, '1', '50|30|50', '70|20|50', '10', '0', '1', 'hin.gif', '40');
+INSERT INTO `units` VALUES (3, 'cav', 'Cavalry', '230|30|300|150|400', 900, '2', '80|140|60', '60|100|40', '25', '2', '1', 'ca.gif', '100');
+INSERT INTO `units` VALUES (4, 'inf', 'Infantry', '40|1|70|40|70', 900, '1', '30|30|30', '30|20|30', '15', '0', '2', 'in.gif', '40');
+INSERT INTO `units` VALUES (5, 'hinf', 'Heavy Infantry', '40|1|70|40|70', 900, '1', '50|30|50', '70|20|50', '10', '0', '2', 'hin.gif', '40');
+INSERT INTO `units` VALUES (6, 'cav', 'Cavalry', '230|30|300|150|400', 900, '2', '80|140|60', '60|100|40', '25', '2', '2', 'ca.gif', '100');
+INSERT INTO `units` VALUES (7, 'inf', 'Infantry', '40|1|70|40|70', 900, '1', '30|30|30', '30|20|30', '15', '0', '3', 'in.gif', '40');
+INSERT INTO `units` VALUES (8, 'hinf', 'Heavy Infantry', '40|1|70|40|70', 900, '1', '50|30|50', '70|20|50', '10', '0', '3', 'hin.gif', '40');
+INSERT INTO `units` VALUES (9, 'cav', 'Cavalry', '230|30|300|150|400', 900, '2', '80|140|60', '60|100|40', '25', '2', '3', 'ca.gif', '100');
+INSERT INTO `units` VALUES (10, 'inf', 'Infantry', '40|1|70|40|70', 900, '1', '30|30|30', '30|20|30', '15', '0', '4', 'in.gif', '40');
+INSERT INTO `units` VALUES (11, 'hinf', 'Heavy Infantry', '40|1|70|40|70', 900, '1', '50|30|50', '70|20|50', '10', '0', '4', 'hin.gif', '40');
+INSERT INTO `units` VALUES (12, 'cav', 'Cavalry', '230|30|300|150|400', 900, '2', '80|140|60', '60|100|40', '25', '2', '4', 'ca.gif', '100');
